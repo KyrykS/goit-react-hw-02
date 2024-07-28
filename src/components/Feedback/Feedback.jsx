@@ -1,4 +1,3 @@
-import React from 'react';
 function Feedback({ feedback }) {
   return (
     <div className="Feedback">

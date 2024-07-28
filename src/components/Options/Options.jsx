@@ -1,16 +1,10 @@
-import React from 'react';
-function Options({ feedback, setFeedback }) {
-  const handleFeedback = (type) => {
-    setFeedback((prevFeedback) => ({
-      ...prevFeedback,
-      [type]: prevFeedback[type] + 1,
-    }));
-  };
+const Options = ({ updateFeedback, totalFeedback, resetFeedback }) => {
   return (
     <div className="Options">
-      <button onClick={() => handleFeedback('good')}>Good</button>
-      <button onClick={() => handleFeedback('neutral')}>Neutral</button>
-      <button onClick={() => handleFeedback('bad')}>Bad</button>
+      <button onClick={() => updateFeedback('good')}>Good</button>
+      <button onClick={() => updateFeedback('neutral')}>Neutral</button>
+      <button onClick={() => updateFeedback('bad')}>Bad</button>
+      {totalFeedback > 0 && <button onClick={resetFeedback}>Reset</button>}
     </div>
   );
 }
